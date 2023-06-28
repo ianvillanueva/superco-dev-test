@@ -2,38 +2,46 @@
 
 <header>
   <div class="top-bar">
-    <p>Meet Festive & Co</p>
-    <div class="top-bar-menu">
-      <ul>
-        <li><a href="#">Account</a></li>
-        <li><a href="#">Contact Us</a></li>
-        <li><a href="#">Store</a></li>
-      </ul>
+    <div class="container">
+      <p>Meet Festive & Co</p>
+      <div class="top-bar-menu">
+        <ul>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Store</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-  <div class="navigation">
-    {% if header_setting.menu != blank %}
-      <nav>
-        <ul>
-          {% assign links = header_setting.menu.links %}
-          {% for menu_item in links %}
-            <li>
-              <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
-    {% endif %}
-    <a href="#"><img src="/assets/icon-search.svg"></a>
-    <a href="#"><img src="/assets/icon-cart.svg"></a>
-  </div>
-  <div class="header-content">
-    {% if header_setting.logo_image != null %}
-      <img src="{{ header_setting.logo_image | img_url: 'master' }}" alt="Logo">
-    {% endif %}
-    {% if header_setting.content != '' %}
-      <p>{{ header_setting.content }}</p>
-    {% endif %}
+  <div class="container">
+    <div class="navigation">
+      {% if header_setting.menu != blank %}
+        <nav>
+          <ul>
+            {% assign links = header_setting.menu.links %}
+            {% for menu_item in links %}
+              <li>
+                <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      {% endif %}
+      <a href="#"><img src="/assets/icon-search.svg"></a>
+      <a href="#"><img src="/assets/icon-cart.svg"></a>
+    </div>
+    <div class="header-content">
+      {% if header_setting.logo_image != null %}
+        <div class="img-wrap">
+          <img src="{{ header_setting.logo_image | img_url: 'master' }}" alt="Logo">
+        </div>
+      {% endif %}
+      {% if header_setting.content != '' %}
+        <div class="content">
+          <p>{{ header_setting.content }}</p>
+        </div>
+      {% endif %}
+    </div>
   </div>
 </header>
 

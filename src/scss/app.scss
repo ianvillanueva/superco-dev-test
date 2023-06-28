@@ -1,5 +1,5 @@
 
-$browser-context: 16; // Default
+$browser-context: 14; // Default
 @function em($pixels, $context: $browser-context) {
     @return #{$pixels/$context}em;
 }
@@ -8,7 +8,8 @@ $browser-context: 16; // Default
 @import "fonts/platform";
 
 @import "components/global";
-@import "components/hero";
+@import "components/header";
+@import "components/banner";
 @import "components/content-cards";
-@import "components/two-col-images";
-@import "components/carousel";
+@import "components/column-content";
+@import "components/featured-products";

@@ -15,9 +15,30 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
-    font-size: 16px;
-    line-height: 28px;
     margin: 0;
     padding: 0;
+    font-family: 'GT Super Text';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.2;
+    color:#000;
+}
+
+h2 {
     font-family: 'GT Super Display';
+    font-size: em(80);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0em;
+    text-align: center;
+    margin:0;
+}
+
+p {
+    margin:0;
+}
+
+.container {
+    max-width:em(1360);
+    margin:0 auto;
 }

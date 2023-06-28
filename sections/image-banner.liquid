@@ -1,7 +1,7 @@
 {% assign hero_banner_settings = section.settings %}
 
-<div class="hero-banner">
-  <div class="image-wrap">
+<div class="banner">
+  <div class="img-wrap">
     {% if hero_banner_settings.banner_image != null %}
       <img src="{{ hero_banner_settings.banner_image | img_url: 'master' }}" alt="Banner">
     {% endif %}

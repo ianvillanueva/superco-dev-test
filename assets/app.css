@@ -76,11 +76,178 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-  font-size: 16px;
-  line-height: 28px;
   margin: 0;
   padding: 0;
+  font-family: "GT Super Text";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000;
+}
+
+h2 {
   font-family: "GT Super Display";
+  font-size: 5.7142857143em;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 97.1428571429em;
+  margin: 0 auto;
+}
+
+header {
+  transition: 0.3s ease;
+  background-color: #85ABBD;
+}
+header .top-bar .container, header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header .top-bar {
+  height: 2.8571428571em;
+  border-bottom: 1px solid #000;
+}
+header .top-bar p {
+  font-family: "GT Super Text";
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0em;
+  text-align: left;
+}
+header .top-bar .top-bar-menu ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .top-bar .top-bar-menu ul li {
+  margin-left: 2.8571428571em;
+}
+header .top-bar .top-bar-menu ul li a {
+  font-family: "GT Super Text";
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+header .top-bar .top-bar-menu ul li a:hover {
+  opacity: 0.5;
+}
+header .navigation {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 7.1428571429em;
+}
+header .navigation ul {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+header .navigation ul li {
+  margin-right: 2.5em;
+}
+header .navigation ul li a {
+  font-family: "Platform";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+header .navigation ul li a:hover {
+  opacity: 0.5;
+}
+header .navigation > a {
+  width: auto;
+  height: 1.5em;
+  transition: 0.3s ease;
+}
+header .navigation > a:hover {
+  opacity: 0.5;
+}
+header .navigation > a:last-child {
+  margin-right: 0;
+  margin-left: 1.7857142857em;
+}
+header .navigation > a img {
+  width: auto;
+  height: 100%;
+}
+header .header-content {
+  padding: 2em 0 4.5em;
+  transition: 0.3s ease;
+}
+header .header-content .img-wrap {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 0;
+  left: 0;
+  transform-origin: left top;
+  transition: 0.3s ease;
+}
+header .header-content .img-wrap img {
+  width: 65.7142857143em;
+  height: auto;
+}
+header .header-content .content {
+  padding-left: 6.4285714286em;
+}
+header .header-content .content p {
+  font-family: "GT Super Text";
+  font-size: 1.4285714286em;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+header.condensed {
+  margin-bottom: -12.6428571429em;
+}
+header.condensed .header-content {
+  padding: 0;
+}
+header.condensed .header-content .img-wrap {
+  scale: 0.2;
+  margin-top: -5.2142857143em;
+  left: 0;
+}
+header.condensed .content {
+  display: none;
+}
+
+.banner {
+  background-color: #85ABBD;
+}
+.banner .img-wrap img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .content-cards {
