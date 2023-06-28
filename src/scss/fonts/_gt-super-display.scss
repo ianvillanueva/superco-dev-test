@@ -1,0 +1,68 @@
+
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('/assets/GT-Super-Display-Medium.ttf') format('truetype');
+  src: url('/assets/GT-Super-Display-Medium.woff2') format('woff2'),
+      url('/assets/GT-Super-Display-Medium.woff') format('woff'),
+      url('/assets/GT-Super-Display-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('/assets/GT-Super-Display-Light-Italic.ttf') format('truetype');
+  src: url('/assets/GT-Super-Display-Light-Italic.woff2') format('woff2'),
+      url('/assets/GT-Super-Display-Light-Italic.woff') format('woff'),
+      url('/assets/GT-Super-Display-Light-Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('/assets/GT-Super-Display-Medium-Italic.ttf') format('truetype');
+  src: url('/assets/GT-Super-Display-Medium-Italic.woff2') format('woff2'),
+      url('/assets/GT-Super-Display-Medium-Italic.woff') format('woff'),
+      url('/assets/GT-Super-Display-Medium-Italic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super Text Book';
+  src: url('/assets/GT-Super-Text-Book.ttf') format('truetype');
+  src: url('/assets/GT-Super-Text-Book.woff2') format('woff2'),
+      url('/assets/GT-Super-Text-Book.woff') format('woff'),
+      url('/assets/GT-Super-Text-Book.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super Text Book';
+  src: url('/assets/GT-Super-Text-Book-Italic.ttf') format('truetype');
+  src: url('/assets/GT-Super-Text-Book-Italic.woff2') format('woff2'),
+      url('/assets/GT-Super-Text-Book-Italic.woff') format('woff'),
+      url('/assets/GT-Super-Text-Book-Italic.ttf') format('truetype'),
+      url('/assets/GT-Super-Text-Book-Italic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super Display';
+  src: url('/assets/GT-Super-Display-Light.ttf') format('truetype');
+  src: url('/assets/GT-Super-Display-Light.woff2') format('woff2'),
+      url('/assets/GT-Super-Display-Light.woff') format('woff'),
+      url('/assets/GT-Super-Display-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

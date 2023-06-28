@@ -1,4 +1,12 @@
 let mix = require('laravel-mix');
-
-mix.js('src/js/app.js', 'assets')
-    .sass('src/scss/app.scss', 'assets');
+mix.webpackConfig({
+        stats: {
+            children: true,
+        },
+    })
+    .js('src/js/app.js', 'assets')
+    .sass('src/scss/app.scss', 'assets')
+    
+    
+    
+    

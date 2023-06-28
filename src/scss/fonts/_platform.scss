@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'Platform';
+  src: url('/assets/Platform-Regular-Web.woff2') format('woff2'),
+      url('/assets/Platform-Regular-Web.woff') format('woff'),
+      url('/assets/Platform-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Platform';
+  src: url('/assets/Platform-Medium-Web.woff2') format('woff2'),
+      url('/assets/Platform-Medium-Web.woff') format('woff'),
+      url('/assets/Platform-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
