@@ -1,0 +1,47 @@
+{% assign column_content_settings = section.settings %}
+
+<div class="section column-content">
+  <div class="content-wrap">
+    <div class="column-content"></div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Column Content",
+  "blocks": [
+    {
+      "name": "Column",
+      "type": "column",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "link_title",
+          "label": "Link Title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Column Content"
+    }
+  ]
+}
+{% endschema %}
