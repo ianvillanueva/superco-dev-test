@@ -20,8 +20,15 @@
             text-decoration: none;
             transition:0.3s ease;
             backface-visibility: hidden;
+          
             &:hover {
                 opacity:0.5;
+                &.btn-arrow-left {
+                    transform:translateX(-5px);
+                }
+                &.btn-arrow-right {
+                    transform:translateX(5px);
+                }
             }
         }
     }

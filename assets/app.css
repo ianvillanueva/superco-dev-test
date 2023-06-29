@@ -462,6 +462,12 @@ header.condensed .content {
 .featured-products .arrow-wrap .btn-arrow:hover {
   opacity: 0.5;
 }
+.featured-products .arrow-wrap .btn-arrow:hover.btn-arrow-left {
+  transform: translateX(-5px);
+}
+.featured-products .arrow-wrap .btn-arrow:hover.btn-arrow-right {
+  transform: translateX(5px);
+}
 .featured-products .products {
   display: flex;
   align-items: center;

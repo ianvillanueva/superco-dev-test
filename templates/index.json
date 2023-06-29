@@ -1,10 +1,143 @@
 {
   "sections": {
     "main": {
-      "type": "image-banner"
+      "type": "image-banner",
+      "settings": {
+        "banner_image": "shopify:\/\/shop_images\/banner.jpg"
+      }
+    },
+    "15eb7d62-c2c1-4f40-938c-88015a2dc327": {
+      "type": "content-cards",
+      "blocks": {
+        "template--19728049242412__15eb7d62-c2c1-4f40-938c-88015a2dc327-16880012990a6ffd19-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card-1.jpg",
+            "color_bg": "#00966e",
+            "title": "Make a scene.",
+            "content": "Everything you need for a great party, from decor to drinks and games. 3",
+            "link_title": "find your scene",
+            "link": "https:\/\/www.google.com\/"
+          }
+        },
+        "c7db0f9c-333b-404b-9dd7-53dbd211e8f9": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card-2.jpg",
+            "color_bg": "#85abbd",
+            "title": "Make it extra.",
+            "content": "Once you’ve chosen a scene, you can dial it up with fun a la carte add-ons.",
+            "link_title": "shop party supplies",
+            "link": "https:\/\/google.com"
+          }
+        },
+        "11fef15b-3943-4db9-b465-aad53b612a35": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card-3.jpg",
+            "color_bg": "#e3ff21",
+            "title": "Make it joyful.",
+            "content": "Create the arrangement of your dreams with DIY kits from Wild & Flowers.",
+            "link_title": "shop florals",
+            "link": "https:\/\/google.com"
+          }
+        },
+        "e60231f9-0786-4710-8a0d-c1bd18de9f66": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/card-4.jpg",
+            "color_bg": "#bf91c4",
+            "title": "Make it happen.",
+            "content": "Need a bartender, caterer, or DJ? Just add to cart. It’s that easy.",
+            "link_title": "browse vendors",
+            "link": "https:\/\/google.com"
+          }
+        }
+      },
+      "block_order": [
+        "template--19728049242412__15eb7d62-c2c1-4f40-938c-88015a2dc327-16880012990a6ffd19-0",
+        "c7db0f9c-333b-404b-9dd7-53dbd211e8f9",
+        "11fef15b-3943-4db9-b465-aad53b612a35",
+        "e60231f9-0786-4710-8a0d-c1bd18de9f66"
+      ],
+      "settings": {
+        "heading": "Having Fun 101"
+      }
+    },
+    "3ddc8d03-b63c-43fd-ac87-99062136d8cd": {
+      "type": "column-content",
+      "blocks": {
+        "9438c5a3-4d91-4710-afdd-1db74f9081af": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img-1.jpg",
+            "title": "Housewarming Gifts for the Host",
+            "link_title": "discover them all",
+            "link": "https:\/\/google.com"
+          }
+        },
+        "7d333e04-8c23-4ca4-8d38-201594ff6b4d": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img-2.jpg",
+            "title": "The Limited-Edition Holiday Scene",
+            "link_title": "shop the scene",
+            "link": "https:\/\/google.com"
+          }
+        }
+      },
+      "block_order": [
+        "9438c5a3-4d91-4710-afdd-1db74f9081af",
+        "7d333e04-8c23-4ca4-8d38-201594ff6b4d"
+      ],
+      "settings": {
+      }
+    },
+    "0acb3951-a9df-4e8f-a9f9-9ea0a4f55d54": {
+      "type": "featured-products",
+      "blocks": {
+        "8f13a118-1297-4601-9cba-2e2986c76a03": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ala-carte-1.jpg",
+            "title": "Classic Barware",
+            "price": "20",
+            "link": "https:\/\/google.com"
+          }
+        },
+        "0aca41ff-4645-4c19-b769-56db170946b1": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ala-carte-2.jpg",
+            "title": "Colored Wine Glasses",
+            "price": "20",
+            "link": "https:\/\/google.com"
+          }
+        },
+        "f2ff1c49-649b-4656-a3d9-232b89d3b33f": {
+          "type": "product",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/ala-carte-3.jpg",
+            "title": "Figlia Aperitivo",
+            "price": "20",
+            "link": "https:\/\/google.com"
+          }
+        }
+      },
+      "block_order": [
+        "8f13a118-1297-4601-9cba-2e2986c76a03",
+        "0aca41ff-4645-4c19-b769-56db170946b1",
+        "f2ff1c49-649b-4656-a3d9-232b89d3b33f"
+      ],
+      "settings": {
+        "heading": "Party A La Carte"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "15eb7d62-c2c1-4f40-938c-88015a2dc327",
+    "3ddc8d03-b63c-43fd-ac87-99062136d8cd",
+    "0acb3951-a9df-4e8f-a9f9-9ea0a4f55d54"
   ]
 }
