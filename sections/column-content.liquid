@@ -1,8 +1,24 @@
 {% assign column_content_settings = section.settings %}
 
 <div class="section column-content">
-  <div class="content-wrap">
-    <div class="column-content"></div>
+  <div class="container">
+    <div class="column-wrap">
+      {%- if section.blocks.size > 1 -%}
+        {%- for block in section.blocks -%}
+          <div class="column-item">
+            {% if block.settings.image != null %}
+              <div class="img-wrap">
+                <img src="{{ block.settings.image | img_url: 'master' }}">
+              </div>
+            {% endif %}
+            <div class="content">
+              <h3>{{ block.settings.title }}</h3>
+              <a href="{{block.settings.link}}">{{ block.settings.link_title }}</a>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
   </div>
 </div>
 

@@ -83,25 +83,37 @@ body {
   font-weight: 400;
   line-height: 1.2;
   color: #000;
+  background-color: #F4EDE5;
 }
 
 h2 {
   font-family: "GT Super Display";
   font-size: 5.7142857143em;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1;
   letter-spacing: 0em;
   text-align: center;
   margin: 0;
+  text-transform: uppercase;
 }
 
 p {
   margin: 0;
 }
 
+a {
+  cursor: pointer;
+}
+
 .container {
-  max-width: 97.1428571429em;
+  max-width: 98.5714285714em;
+  padding: 0 0.7142857143em;
+  width: 100%;
   margin: 0 auto;
+}
+
+.heading-wrap {
+  padding: 5em 0 3.5714285714em;
 }
 
 header {
@@ -243,21 +255,303 @@ header.condensed .content {
 .banner {
   background-color: #85ABBD;
 }
+.banner .img-wrap {
+  font-size: 0;
+}
 .banner .img-wrap img {
   width: 100%;
-  height: auto;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
-.content-cards {
+.content-cards .content-card-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.content-cards .content-card-items .card-item {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  max-width: 23.7142857143em;
+  min-height: 30.9285714286em;
+  padding: 0.7142857143em;
+  margin: 0 0.3571428571em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+}
+.content-cards .content-card-items .card-item:hover .img-wrap img {
+  scale: 1.1;
+}
+.content-cards .content-card-items .card-item:hover span:after {
+  opacity: 0;
+  width: 0%;
+}
+.content-cards .content-card-items .card-item .img-wrap {
+  width: 22.2857142857em;
+  height: 16em;
+  overflow: hidden;
+}
+.content-cards .content-card-items .card-item .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.3s ease;
+}
+.content-cards .content-card-items .card-item .content {
+  max-width: 20.5em;
+  margin: 0 auto;
+}
+.content-cards .content-card-items .card-item h4 {
+  font-family: "GT Super Display";
+  font-size: 2.2857142857em;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 0.3125em;
   color: #000;
 }
-
-.two-col-images {
+.content-cards .content-card-items .card-item p {
+  font-family: "GT Super Text";
+  font-size: 1em;
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: 0em;
+  text-align: center;
+  max-width: 19.4285714286em;
+  margin: 0 auto 1.1428571429em;
   color: #000;
 }
-
-.carousel {
+.content-cards .content-card-items .card-item span {
+  font-family: "Platform";
+  font-size: 0.8571428571em;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  display: inline-block;
+  text-transform: uppercase;
   color: #000;
+  position: relative;
+}
+.content-cards .content-card-items .card-item span:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
+  transition: 0.3s ease;
+  opacity: 1;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.column-content {
+  margin-top: 5.5em;
+}
+.column-content .column-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 -5px;
+}
+.column-content .column-wrap .column-item {
+  width: 100%;
+  max-width: 48.2142857143em;
+  height: auto;
+  margin: 0 5px;
+  position: relative;
+}
+.column-content .column-wrap .column-item .img-wrap {
+  width: 100%;
+  height: 100%;
+}
+.column-content .column-wrap .column-item .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.column-content .column-wrap .column-item .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  text-align: center;
+  max-width: 43.8571428571em;
+  width: 100%;
+  margin: 0 auto 3.2142857143em;
+}
+.column-content .column-wrap .column-item .content h3 {
+  font-family: "GT Super Display";
+  font-size: 4.5714285714em;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #fff;
+  margin: 0;
+}
+.column-content .column-wrap .column-item .content a {
+  font-family: "Platform";
+  font-size: 1.1428571429em;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  margin-top: 1.25em;
+  display: inline-block;
+  text-decoration: none;
+}
+.column-content .column-wrap .column-item .content a:hover:after {
+  opacity: 0;
+  width: 0%;
+}
+.column-content .column-wrap .column-item .content a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background-color: #fff;
+  transition: 0.3s ease;
+  opacity: 1;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.featured-products {
+  padding-bottom: 5.7142857143em;
+  text-align: center;
+}
+.featured-products .products-wrap {
+  position: relative;
+}
+.featured-products .arrow-wrap {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: 9;
+  pointer-events: none;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.featured-products .arrow-wrap .btn-arrow {
+  pointer-events: auto;
+  text-decoration: none;
+  transition: 0.3s ease;
+  backface-visibility: hidden;
+}
+.featured-products .arrow-wrap .btn-arrow:hover {
+  opacity: 0.5;
+}
+.featured-products .products {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 -1px;
+}
+.featured-products .products .product-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-decoration: none;
+  margin: 0 1px;
+}
+.featured-products .products .product-item:hover .img-wrap img {
+  scale: 1.1;
+}
+.featured-products .products .product-item .img-wrap {
+  width: 29.8571428571em;
+  height: 22.3571428571em;
+  overflow: hidden;
+}
+.featured-products .products .product-item .img-wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: 0.3s ease;
+}
+.featured-products .products .product-item .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.1428571429em;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 1.4285714286em;
+}
+.featured-products .products .product-item .content p {
+  font-family: "GT Super Display";
+  font-size: 1.7142857143em;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.3;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+}
+.featured-products .products .product-item .content span {
+  display: inline-block;
+  font-family: "Platform";
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  text-align: right;
+  color: #000;
+}
+.featured-products .btn-shop-all {
+  font-family: "Platform";
+  font-size: 1.1428571429em;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.25em;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #000;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
+  margin-top: 2.9375em;
+}
+.featured-products .btn-shop-all:hover:after {
+  opacity: 0;
+  width: 0%;
+}
+.featured-products .btn-shop-all:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
+  transition: 0.3s ease;
+  opacity: 1;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
 }

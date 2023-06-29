@@ -22,23 +22,34 @@ body {
     font-weight: 400;
     line-height: 1.2;
     color:#000;
+    background-color: #F4EDE5;
 }
 
 h2 {
     font-family: 'GT Super Display';
     font-size: em(80);
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1;
     letter-spacing: 0em;
     text-align: center;
     margin:0;
+    text-transform: uppercase;
 }
 
 p {
     margin:0;
 }
 
+a {
+    cursor: pointer;
+}
 .container {
-    max-width:em(1360);
+    max-width:em(1380);
+    padding:0 em(10);
+    width: 100%;
     margin:0 auto;
+}
+
+.heading-wrap {
+    padding:em(70) 0 em(50);
 }

@@ -1,9 +1,30 @@
-{% assign carousel_settings = section.settings %}
+{% assign content_card_settings = section.settings %}
 
 <div class="section content-cards">
-  <div class="content-wrap">
-    <div class="heading-wrap"></div>
-    <div class="content-card-items"></div>
+  <div class="container">
+    {% if content_card_settings.heading != '' %}
+      <div class="heading-wrap">
+        <h2>{{ content_card_settings.heading }}</h2>
+      </div>
+    {% endif %}
+    <div class="content-card-items">
+      {%- if section.blocks.size > 1 -%}
+        {%- for block in section.blocks -%}
+          <a href="{{block.settings.link}}" class="card-item" style="background-color:{{ block.settings.color_bg}}">
+            {% if block.settings.image != null %}
+              <div class="img-wrap">
+                <img src="{{ block.settings.image | img_url: 'master' }}">
+              </div>
+            {% endif %}
+            <div class="content">
+              <h4>{{ block.settings.title }}</h4>
+              <p>{{ block.settings.content }}</p>
+              <span>{{ block.settings.link_title }}</span>
+            </div>
+          </a>
+        {% endfor %}
+      {% endif %}
+    </div>
   </div>
 </div>
 
@@ -26,6 +47,11 @@
           "type": "image_picker",
           "id": "image",
           "label": "Image"
+        },
+        {
+          "type": "color",
+          "id": "color_bg",
+          "label": "Background Color"
         },
         {
           "type": "text",
