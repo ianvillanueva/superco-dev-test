@@ -423,18 +423,42 @@ header.condensed .content {
      object-fit: cover;
 }
 
+@media screen and (max-width: 600px) {
+  .content-cards .slick-list {
+    padding: 0 20% 0 10px;
+  }
+}
 .content-cards .content-card-items {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  position: relative;
+}
+@media screen and (min-width: 1381px) {
+  .content-cards .content-card-items {
+    max-width: 98.5714285714em;
+    padding: 0 0.7142857143em;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.content-cards .content-card-items:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background: linear-gradient(90deg, rgba(244, 237, 229, 0) 0%, rgb(244, 237, 229) 100%);
+  height: 100%;
+  width: 2.1428571429em;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+@media screen and (min-width: 1381px) {
+  .content-cards .content-card-items:after {
+    display: none;
+  }
 }
 .content-cards .content-card-items .card-item {
   display: block;
   text-decoration: none;
-  width: 100%;
-  max-width: 23.7142857143em;
+  width: 23.7142857143em;
   min-height: 30.9285714286em;
   padding: 0.7142857143em;
   margin: 0 0.3571428571em;
@@ -444,10 +468,20 @@ header.condensed .content {
   align-items: center;
   text-align: center;
 }
+@media screen and (max-width: 767px) {
+  .content-cards .content-card-items .card-item {
+    min-height: 26.1428571429em;
+  }
+}
+@media screen and (max-width: 600px) {
+  .content-cards .content-card-items .card-item {
+    width: 18.8571428571em;
+  }
+}
 .content-cards .content-card-items .card-item:hover .img-wrap img {
   scale: 1.1;
 }
-.content-cards .content-card-items .card-item:hover span:after {
+.content-cards .content-card-items .card-item:hover a:after {
   opacity: 0;
   width: 0%;
 }
@@ -455,6 +489,17 @@ header.condensed .content {
   width: 22.2857142857em;
   height: 16em;
   overflow: hidden;
+}
+@media screen and (max-width: 1380px) {
+  .content-cards .content-card-items .card-item .img-wrap {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .content-cards .content-card-items .card-item .img-wrap {
+    width: 100%;
+    height: 12.8571428571em;
+  }
 }
 .content-cards .content-card-items .card-item .img-wrap img {
   width: 100%;
@@ -474,8 +519,16 @@ header.condensed .content {
   line-height: 1;
   letter-spacing: 0em;
   text-align: center;
+  margin-bottom: 0.9375em;
   margin-bottom: 0.3125em;
   color: #000;
+}
+@media screen and (max-width: 767px) {
+  .content-cards .content-card-items .card-item h4 {
+    font-size: 1.7142857143em;
+    margin-top: 0.8333333333em;
+    margin-bottom: 0.3333333333em;
+  }
 }
 .content-cards .content-card-items .card-item p {
   font-family: "GT Super Text";
@@ -488,7 +541,7 @@ header.condensed .content {
   margin: 0 auto 1.1428571429em;
   color: #000;
 }
-.content-cards .content-card-items .card-item span {
+.content-cards .content-card-items .card-item a {
   font-family: "Platform";
   font-size: 0.8571428571em;
   font-weight: 500;
@@ -498,8 +551,10 @@ header.condensed .content {
   text-transform: uppercase;
   color: #000;
   position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
 }
-.content-cards .content-card-items .card-item span:after {
+.content-cards .content-card-items .card-item a:after {
   content: "";
   display: block;
   position: absolute;
@@ -631,6 +686,36 @@ header.condensed .content {
 .featured-products .products-wrap {
   position: relative;
 }
+@media screen and (min-width: 1025px) {
+  .featured-products .products-wrap {
+    max-width: 98.5714285714em;
+    padding: 0 0.7142857143em;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+.featured-products .products-wrap:before, .featured-products .products-wrap:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 2.1428571429em;
+  top: 0;
+  z-index: 3;
+}
+@media screen and (min-width: 1025px) {
+  .featured-products .products-wrap:before, .featured-products .products-wrap:after {
+    display: none;
+  }
+}
+.featured-products .products-wrap:before {
+  background: linear-gradient(-90deg, rgba(244, 237, 229, 0) 0%, rgb(244, 237, 229) 100%);
+  left: 0;
+}
+.featured-products .products-wrap:after {
+  background: linear-gradient(90deg, rgba(244, 237, 229, 0) 0%, rgb(244, 237, 229) 100%);
+  right: 0;
+}
 .featured-products .arrow-wrap {
   position: absolute;
   top: 50%;
@@ -638,9 +723,16 @@ header.condensed .content {
   transform: translateY(-50%);
   z-index: 9;
   pointer-events: none;
-  width: 100%;
+  width: calc(100% - 20px);
+  right: 0;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 1024px) {
+  .featured-products .arrow-wrap {
+    display: none;
+  }
 }
 .featured-products .arrow-wrap .btn-arrow {
   pointer-events: auto;
@@ -663,22 +755,26 @@ header.condensed .content {
   transform: translateX(5px);
 }
 .featured-products .products {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 0 -1px;
+  max-width: 90.1428571429em;
+  margin: 0 auto;
+}
+@media screen and (max-width: 1380px) and (min-width: 1025px) {
+  .featured-products .products {
+    font-size: 1.014vw;
+  }
 }
 .featured-products .products .product-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 29.8571428571em;
   text-decoration: none;
   margin: 0 1px;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .featured-products .products .product-item {
+    width: 19.8571428571em;
     margin: 0 5px;
   }
 }
@@ -690,7 +786,7 @@ header.condensed .content {
   height: 22.3571428571em;
   overflow: hidden;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .featured-products .products .product-item .img-wrap {
     width: 19.8571428571em;
     height: 14.8571428571em;
@@ -730,7 +826,7 @@ header.condensed .content {
   text-align: left;
   color: #000;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1024px) {
   .featured-products .products .product-item .content p {
     font-size: 1.4285714286em;
     margin-bottom: 0.5em;

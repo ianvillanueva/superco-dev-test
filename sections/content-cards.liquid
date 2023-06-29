@@ -7,24 +7,25 @@
         <h2>{{ content_card_settings.heading }}</h2>
       </div>
     {% endif %}
-    <div class="content-card-items">
-      {%- if section.blocks.size > 1 -%}
-        {%- for block in section.blocks -%}
-          <a href="{{block.settings.link}}" class="card-item" style="background-color:{{ block.settings.color_bg}}">
-            {% if block.settings.image != null %}
-              <div class="img-wrap">
-                <img src="{{ block.settings.image | img_url: 'master' }}">
-              </div>
-            {% endif %}
-            <div class="content">
-              <h4>{{ block.settings.title }}</h4>
-              <p>{{ block.settings.content }}</p>
-              <span>{{ block.settings.link_title }}</span>
+  </div>
+
+  <div class="content-card-items cards-carousel">
+    {%- if section.blocks.size > 1 -%}
+      {%- for block in section.blocks -%}
+        <div class="card-item" style="background-color:{{ block.settings.color_bg}}">
+          {% if block.settings.image != null %}
+            <div class="img-wrap">
+              <img src="{{ block.settings.image | img_url: 'master' }}">
             </div>
-          </a>
-        {% endfor %}
-      {% endif %}
-    </div>
+          {% endif %}
+          <div class="content">
+            <h4>{{ block.settings.title }}</h4>
+            <p>{{ block.settings.content }}</p>
+            <a href="{{block.settings.link}}">{{ block.settings.link_title }}</a>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
   </div>
 </div>
 

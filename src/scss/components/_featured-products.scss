@@ -4,6 +4,32 @@
 
     .products-wrap {
         position:relative;
+        @media screen and (min-width:1025px) {
+            max-width: em(1380);
+            padding: 0 em(10);
+            width: 100%;
+            margin: 0 auto;
+        }
+        &:before, &:after {
+            @media screen and (min-width:1025px) {
+                display:none;
+            }
+            content:'';
+            display:block;
+            position:absolute;
+            height:100%;
+            width:em(30);
+            top:0;
+            z-index:3;
+        }
+        &:before {
+            background: linear-gradient(-90deg, rgba(244,237,229,0) 0%, rgba(244,237,229,1) 100%);
+            left:0;
+        }
+        &:after {
+            background: linear-gradient(90deg, rgba(244,237,229,0) 0%, rgba(244,237,229,1) 100%);
+            right:0;
+        }
     }
     .arrow-wrap {
         position:absolute;
@@ -12,9 +38,14 @@
         transform:translateY(-50%);
         z-index:9;
         pointer-events: none;
-        width:100%;
+        width:calc(100% - 20px);
+        right:0;
+        margin:0 auto;
         display:flex;
         justify-content: space-between;
+        @media screen and (max-width:1024px) {
+            display:none;
+        }
         .btn-arrow {
             pointer-events: auto;
             text-decoration: none;
@@ -35,19 +66,21 @@
         }
     }
     .products {
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        width:100%;
-        margin: 0 -1px;
+        max-width:em(1262);
+        margin: 0 auto; 
+        @media screen and (max-width:1380px) and (min-width:1025px) {
+            font-size:1.014vw;
+        }
         .product-item {
             display:flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
+            width:em(418);
             text-decoration: none;
             margin:0 1px;
-            @media screen and (max-width:767px) {
+            @media screen and (max-width:1024px) {
+                width:em(278);
                 margin:0 5px;
             }
             &:hover {
@@ -61,7 +94,7 @@
                 width:em(418);
                 height:em(313);
                 overflow: hidden;
-                @media screen and (max-width:767px) {
+                @media screen and (max-width:1024px) {
                     width:em(278);
                     height:em(208);
                 }
@@ -96,7 +129,7 @@
                     text-align: left;
                     color:#000;
 
-                    @media screen and (max-width:767px) {
+                    @media screen and (max-width:1024px) {
                         font-size:em(20);
                         margin-bottom:em(10, 20);
                     }

@@ -7,31 +7,32 @@
         <h2>{{ feature_product_settings.heading }}</h2>
       </div>
     {% endif %}
-    <div class="products-wrap">
-      <div class="arrow-wrap">
-        <a href="#" class="btn-arrow btn-arrow-left">{% render 'icon-arrow-left' %}</a>
-        <a href="#" class="btn-arrow btn-arrow-right">{% render 'icon-arrow-right' %}</a>
-      </div>
-      <div class="products">
-        {%- if section.blocks.size > 1 -%}
-          {%- for block in section.blocks -%}
-            <a href="{{block.settings.link}}" class="product-item">
-              {% if block.settings.image != null %}
-                <div class="img-wrap">
-                  <img src="{{ block.settings.image | img_url: 'master' }}">
-                </div>
-              {% endif %}
-              <div class="content">
-                <p>{{ block.settings.title }}</p>
-                <span>${{ block.settings.price }}</span>
-              </div>
-            </a>
-          {% endfor %}
-        {% endif %}
-      </div>
-    </div>
-    <a href="#" class="btn-shop-all">Shop All</a>
   </div>
+
+  <div class="products-wrap">
+    <div class="arrow-wrap">
+      <a href="#" class="btn-arrow btn-arrow-left">{% render 'icon-arrow-left' %}</a>
+      <a href="#" class="btn-arrow btn-arrow-right">{% render 'icon-arrow-right' %}</a>
+    </div>
+    <div class="products products-carousel">
+      {%- if section.blocks.size > 1 -%}
+        {%- for block in section.blocks -%}
+          <div class="product-item">
+            {% if block.settings.image != null %}
+              <div class="img-wrap">
+                <img src="{{ block.settings.image | img_url: 'master' }}">
+              </div>
+            {% endif %}
+            <div class="content">
+              <p>{{ block.settings.title }}</p>
+              <span>${{ block.settings.price }}</span>
+            </div>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+  <a href="#" class="btn-shop-all">Shop All</a>
 </div>
 
 {% schema %}
