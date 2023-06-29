@@ -536,6 +536,11 @@ header.condensed .content {
   transition: 0.3s ease;
   backface-visibility: hidden;
 }
+@media screen and (max-width: 767px) {
+  .featured-products .arrow-wrap .btn-arrow {
+    display: none;
+  }
+}
 .featured-products .arrow-wrap .btn-arrow:hover {
   opacity: 0.5;
 }
@@ -559,6 +564,11 @@ header.condensed .content {
   justify-content: flex-start;
   text-decoration: none;
   margin: 0 1px;
+}
+@media screen and (max-width: 767px) {
+  .featured-products .products .product-item {
+    margin: 0 5px;
+  }
 }
 .featured-products .products .product-item:hover .img-wrap img {
   scale: 1.1;
