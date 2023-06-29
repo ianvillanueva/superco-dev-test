@@ -8,7 +8,6 @@
 /***/ (() => {
 
 $(document).ready(function () {
-  console.log('Ready');
   $(window).resize(function () {
     $('.img-asset').each(function (index, item) {
       var desktopImg = $(item).attr('desktop-img');
@@ -20,6 +19,11 @@ $(document).ready(function () {
       }
     });
   }).resize();
+  $('.burger').on('click', function (e) {
+    e.preventDefault();
+    $('.burger').toggleClass('active');
+    $('.navigation').toggleClass('active');
+  });
 });
 $(window).on('load', function () {
   console.log("Load");

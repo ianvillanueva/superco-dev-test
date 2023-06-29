@@ -14,6 +14,22 @@
     </div>
   </div>
   <div class="container">
+    <div class="navigation-mobile">
+      {% if header_setting.logo_image != null %}
+        <div class="logo-wrap">
+          <img src="{{ header_setting.logo_image | img_url: 'master' }}" alt="Logo">
+        </div>
+      {% endif %}
+      <div class="btn-wrap">
+        <a href="#">{% render 'icon-search' %}</a>
+        <a href="#">{% render 'icon-cart' %}</a>
+        <a href="#" class="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
+      </div>
+    </div>
     <div class="navigation">
       {% if header_setting.menu != blank %}
         <nav>

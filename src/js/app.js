@@ -1,6 +1,4 @@
 $(document).ready(() => {
-    console.log('Ready');
-
     $(window).resize(()=>{
         $('.img-asset').each((index, item)=>{
             const desktopImg = $(item).attr('desktop-img');
@@ -12,6 +10,12 @@ $(document).ready(() => {
             }
         })
     }).resize()
+
+    $('.burger').on('click', (e) => {
+        e.preventDefault();
+        $('.burger').toggleClass('active');
+        $('.navigation').toggleClass('active');
+    })
     
 })
 
