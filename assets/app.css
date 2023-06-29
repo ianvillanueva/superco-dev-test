@@ -84,6 +84,7 @@ body {
   line-height: 1.2;
   color: #000;
   background-color: #F4EDE5;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -95,6 +96,11 @@ h2 {
   text-align: center;
   margin: 0;
   text-transform: uppercase;
+}
+@media screen and (max-width: 767px) {
+  h2 {
+    font-size: 2.8571428571em;
+  }
 }
 
 p {
@@ -115,6 +121,11 @@ a {
 .heading-wrap {
   padding: 5em 0 3.5714285714em;
 }
+@media screen and (max-width: 767px) {
+  .heading-wrap {
+    padding: 4.2857142857em 0 2.1428571429em;
+  }
+}
 
 header {
   transition: 0.3s ease;
@@ -129,6 +140,11 @@ header .top-bar .container, header .header-content {
 header .top-bar {
   height: 2.8571428571em;
   border-bottom: 1px solid #000;
+}
+@media screen and (max-width: 767px) {
+  header .top-bar {
+    display: none;
+  }
 }
 header .top-bar p {
   font-family: "GT Super Text";
@@ -168,6 +184,11 @@ header .navigation {
   justify-content: flex-end;
   align-items: center;
   height: 7.1428571429em;
+}
+@media screen and (max-width: 767px) {
+  header .navigation {
+    display: none;
+  }
 }
 header .navigation ul {
   list-style-type: none;
@@ -213,21 +234,41 @@ header .header-content {
   padding: 2em 0 4.5em;
   transition: 0.3s ease;
 }
+@media screen and (max-width: 767px) {
+  header .header-content {
+    flex-direction: column;
+    align-items: flex-end;
+    padding-bottom: 3.4285714286em;
+  }
+}
 header .header-content .img-wrap {
-  width: 100%;
+  width: 201.76%;
   height: auto;
   position: relative;
   margin-top: 0;
   left: 0;
   transform-origin: left top;
   transition: 0.3s ease;
+  max-width: 65.7142857143em;
+}
+@media screen and (max-width: 767px) {
+  header .header-content .img-wrap {
+    width: 100%;
+  }
 }
 header .header-content .img-wrap img {
-  width: 65.7142857143em;
+  width: 100%;
   height: auto;
 }
 header .header-content .content {
   padding-left: 6.4285714286em;
+}
+@media screen and (max-width: 767px) {
+  header .header-content .content {
+    padding-top: 1.4285714286em;
+    padding-left: 0;
+    max-width: 17.0714285714em;
+  }
 }
 header .header-content .content p {
   font-family: "GT Super Text";
@@ -236,6 +277,11 @@ header .header-content .content p {
   line-height: 1.1;
   letter-spacing: 0.01em;
   text-align: left;
+}
+@media screen and (max-width: 767px) {
+  header .header-content .content p {
+    font-size: 1.1428571429em;
+  }
 }
 header.condensed {
   margin-bottom: -12.6428571429em;
@@ -365,12 +411,26 @@ header.condensed .content {
   justify-content: space-between;
   margin: 0 -5px;
 }
+@media screen and (max-width: 767px) {
+  .column-content .column-wrap {
+    flex-direction: column;
+    margin: 0;
+  }
+}
 .column-content .column-wrap .column-item {
   width: 100%;
   max-width: 48.2142857143em;
   height: auto;
   margin: 0 5px;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  .column-content .column-wrap .column-item {
+    margin: 0 0 20px;
+  }
+  .column-content .column-wrap .column-item:last-child {
+    margin-bottom: 0;
+  }
 }
 .column-content .column-wrap .column-item .img-wrap {
   width: 100%;
@@ -392,6 +452,12 @@ header.condensed .content {
   max-width: 43.8571428571em;
   width: 100%;
   margin: 0 auto 3.2142857143em;
+  padding: 0 15px;
+}
+@media screen and (max-width: 1024px) {
+  .column-content .column-wrap .column-item .content {
+    max-width: 23.7142857143em;
+  }
 }
 .column-content .column-wrap .column-item .content h3 {
   font-family: "GT Super Display";
@@ -402,6 +468,11 @@ header.condensed .content {
   text-align: center;
   color: #fff;
   margin: 0;
+}
+@media screen and (max-width: 1024px) {
+  .column-content .column-wrap .column-item .content h3 {
+    font-size: 2.2857142857em;
+  }
 }
 .column-content .column-wrap .column-item .content a {
   font-family: "Platform";
@@ -415,6 +486,12 @@ header.condensed .content {
   margin-top: 1.25em;
   display: inline-block;
   text-decoration: none;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 767px) {
+  .column-content .column-wrap .column-item .content a {
+    font-size: 0.8571428571em;
+  }
 }
 .column-content .column-wrap .column-item .content a:hover:after {
   opacity: 0;
@@ -491,6 +568,12 @@ header.condensed .content {
   height: 22.3571428571em;
   overflow: hidden;
 }
+@media screen and (max-width: 767px) {
+  .featured-products .products .product-item .img-wrap {
+    width: 19.8571428571em;
+    height: 14.8571428571em;
+  }
+}
 .featured-products .products .product-item .img-wrap img {
   width: 100%;
   height: 100%;
@@ -508,6 +591,13 @@ header.condensed .content {
   background-color: #fff;
   padding: 0 1.4285714286em;
 }
+@media screen and (max-width: 767px) {
+  .featured-products .products .product-item .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
 .featured-products .products .product-item .content p {
   font-family: "GT Super Display";
   font-size: 1.7142857143em;
@@ -517,6 +607,12 @@ header.condensed .content {
   letter-spacing: 0em;
   text-align: left;
   color: #000;
+}
+@media screen and (max-width: 767px) {
+  .featured-products .products .product-item .content p {
+    font-size: 1.4285714286em;
+    margin-bottom: 0.5em;
+  }
 }
 .featured-products .products .product-item .content span {
   display: inline-block;
@@ -542,6 +638,11 @@ header.condensed .content {
   text-align: center;
   display: inline-block;
   margin-top: 2.9375em;
+}
+@media screen and (max-width: 767px) {
+  .featured-products .btn-shop-all {
+    font-size: 0.8571428571em;
+  }
 }
 .featured-products .btn-shop-all:hover:after {
   opacity: 0;

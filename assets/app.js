@@ -7,7 +7,23 @@
   \***********************/
 /***/ (() => {
 
-
+$(document).ready(function () {
+  console.log('Ready');
+  $(window).resize(function () {
+    $('.img-asset').each(function (index, item) {
+      var desktopImg = $(item).attr('desktop-img');
+      var mobileImg = $(item).attr('mobile-img');
+      if ($(window).width() < 767) {
+        $(item).attr('src', mobileImg);
+      } else {
+        $(item).attr('src', desktopImg);
+      }
+    });
+  }).resize();
+});
+$(window).on('load', function () {
+  console.log("Load");
+});
 
 /***/ }),
 

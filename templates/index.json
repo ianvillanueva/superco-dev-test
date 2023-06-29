@@ -3,7 +3,8 @@
     "main": {
       "type": "image-banner",
       "settings": {
-        "banner_image": "shopify:\/\/shop_images\/banner.jpg"
+        "banner_image": "shopify:\/\/shop_images\/banner.jpg",
+        "mobile_banner_image": "shopify:\/\/shop_images\/mobile-banner-img.jpg"
       }
     },
     "15eb7d62-c2c1-4f40-938c-88015a2dc327": {

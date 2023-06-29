@@ -5,13 +5,24 @@
         align-items: center;
         justify-content: space-between;
         margin:0 -5px;
+        @media screen and (max-width:767px) {
+            flex-direction: column;
+            margin: 0;
+        }
         .column-item {
             width:100%;
             max-width:em(675);
             height:auto;
             margin:0 5px;
             position:relative;
-            .img-wrap {
+            @media screen and (max-width:767px) {
+                margin:0 0 20px; 
+
+                &:last-child {
+                    margin-bottom:0;
+                }
+            }
+            .img-wrap { 
                 width:100%;
                 height:100%;
                 img {
@@ -31,6 +42,12 @@
                 max-width:em(614);
                 width:100%;
                 margin:0 auto em(45);
+                padding:0 15px;
+
+                @media screen and (max-width:1024px) {
+                    max-width:em(332);
+                }
+               
                 h3 {
                     font-family: 'GT Super Display';
                     font-size: em(64);
@@ -40,6 +57,9 @@
                     text-align: center;
                     color:#fff;
                     margin:0;
+                    @media screen and (max-width:1024px) {
+                        font-size:em(32);
+                    }
                 }
 
                 a {
@@ -54,6 +74,10 @@
                     margin-top:em(20, 16);
                     display:inline-block;
                     text-decoration: none;
+                    text-transform: uppercase;
+                    @media screen and (max-width:767px) {
+                        font-size:em(12);
+                    }
                     &:hover {
                         &:after {
                             opacity:0;
