@@ -123,7 +123,7 @@ a {
 }
 @media screen and (max-width: 767px) {
   .heading-wrap {
-    padding: 4.2857142857em 0 2.1428571429em;
+    padding: 4.2857142857em 1.0714285714em 2.1428571429em;
   }
 }
 

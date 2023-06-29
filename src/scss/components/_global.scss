@@ -57,6 +57,6 @@ a {
 .heading-wrap {
     padding:em(70) 0 em(50);
     @media screen and (max-width:767px) {
-        padding:em(60) 0 em(30);
+        padding:em(60) em(15) em(30);
     }
 }
