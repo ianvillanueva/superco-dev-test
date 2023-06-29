@@ -1,0 +1,11 @@
+.gitignore
+.theme-check.yml
+LICENSE.md
+translation.yml
+package.json
+package-lock.json
+src/
+assets/.gitkeep
+.config/
+.github/
+node_modules/
