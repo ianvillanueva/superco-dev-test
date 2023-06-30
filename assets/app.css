@@ -85,7 +85,11 @@ body {
   color: #000;
   background-color: #F4EDE5;
   overflow-x: hidden;
-  transform: translate3d(0, 0, 0);
+}
+@media screen and (max-width: 767px) {
+  body.disabled-scroll {
+    overflow: hidden !important;
+  }
 }
 
 h2 {

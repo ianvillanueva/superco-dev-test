@@ -16,12 +16,14 @@ $(document).ready(() => {
 
         if(!$('.burger').hasClass('active')) {
             $('.burger').addClass('active');
+            $('body').addClass('disabled-scroll');
             gsap.to('.navigation', {
                 duration:0.7,
                 x:0,
                 ease:Expo.easeOut
             })
         } else {
+            $('body').removeClass('disabled-scroll');
             $('.burger').removeClass('active');
             gsap.to('.navigation', {
                 duration:0.3,
@@ -110,7 +112,7 @@ $(document).ready(() => {
             x:0,
             ease:Expo.easeOut,
             onComplete:function() {
-                getCartItems();
+                openCart();
             }
         })
       })
@@ -121,8 +123,25 @@ $(document).ready(() => {
             duration:0.3,
             x:$('.sidebar-cart').width(),
             ease:Expo.easeIn,
+            onComplete:function() {
+                $('.side-cart').removeClass('active')
+            }
         })
       })
+
+      function openCart() {
+        if($('.sidebar-cart').hasClass('active')) return;
+        gsap.to('.sidebar-cart', {
+            duration:0.3,
+            x:0,
+            ease:Expo.easeOut,
+            onComplete:function() {
+                getCartItems();
+            }
+        })
+        $('.sidebar-cart').addClass('active');
+
+      }
 
       function addToCart(data) {
         console.log(data)
@@ -133,7 +152,7 @@ $(document).ready(() => {
             dataType: 'json',
             success: function(res) { 
               console.log("add to cart", res);
-              getCartItems();
+              openCart();
             }
         });
       }

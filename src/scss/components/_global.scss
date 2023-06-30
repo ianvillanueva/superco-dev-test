@@ -9,6 +9,7 @@ html {
     padding: 0;
     width: 100%;
     height: auto;
+
 }
 
 body {
@@ -24,7 +25,13 @@ body {
     color:#000;
     background-color: #F4EDE5;
     overflow-x:hidden;
-    transform:translate3d(0,0,0);
+
+    &.disabled-scroll {
+        @media screen and (max-width:767px) {
+            overflow:hidden !important;
+        }
+    }
+    // transform:translate3d(0,0,0);
 }
 
 h2 {
