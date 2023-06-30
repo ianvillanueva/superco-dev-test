@@ -35,7 +35,7 @@
         </a>
       </div>
     </div>
-    <div class="navigation">
+    <div class="navigation navigation-menu">
       {% if header_setting.menu != blank %}
         <nav>
           <ul>
@@ -65,6 +65,44 @@
           <p>{{ header_setting.content }}</p>
         </div>
       {% endif %}
+    </div>
+    <div class="navigation sticky-navigation">
+      <div class="container">
+        <a href="/" class="logo-wrap">
+          <img src="{{ header_setting.logo_image | img_url: 'master' }}" alt="Logo">
+        </a>
+        <div class="nav-wrap">
+          {% if header_setting.menu != blank %}
+            <nav>
+              <ul>
+                {% assign links = header_setting.menu.links %}
+                {% for menu_item in links %}
+                  <li>
+                    <a href="{{ menu_item.url }}">{{ menu_item.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </nav>
+          {% endif %}
+          <a href="#">{% render 'icon-search' %}</a>
+          <a href="#" class="btn-cart">
+            <span class="cart-count"></span>
+            {% render 'icon-cart' -%}
+          </a>
+        </div>
+        <div class="btn-wrap">
+          <a href="#">{% render 'icon-search' %}</a>
+          <a href="#" class="btn-cart">
+            <span class="cart-count"></span>
+            {% render 'icon-cart' %}
+          </a>
+          <a href="#" class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </header>

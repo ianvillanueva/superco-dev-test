@@ -9,7 +9,7 @@
 
 $(document).ready(function () {
   var imgAssets = $('.img-asset');
-  var navigation = $('.navigation');
+  var navigation = $('.navigation-menu');
   var sidebarCart = $('.sidebar-cart');
   var cartItems = $('.cart-items');
   var cartCount = $('.cart-count');
@@ -200,7 +200,24 @@ $(document).ready(function () {
       $('header').removeClass('condensed');
       $('.banner').removeClass('condensed');
     }
+    stickyNavigation(st);
   });
+  function stickyNavigation(st) {
+    var nav = '.sticky-navigation';
+    if (st >= $('header').height() + 100) {
+      gsap.to(nav, {
+        duration: 0.3,
+        y: 0,
+        ease: Expo.out
+      });
+    } else {
+      gsap.to(nav, {
+        duration: 0.7,
+        y: -100,
+        ease: Expo["in"]
+      });
+    }
+  }
 });
 $(window).on('load', function () {
   // Code to run after window has loaded

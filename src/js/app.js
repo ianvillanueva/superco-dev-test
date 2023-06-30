@@ -1,6 +1,6 @@
 $(document).ready(() => {
     const imgAssets = $('.img-asset');
-    const navigation = $('.navigation');
+    const navigation = $('.navigation-menu');
     const sidebarCart = $('.sidebar-cart');
     const cartItems = $('.cart-items');
     const cartCount = $('.cart-count');
@@ -233,7 +233,25 @@ $(document).ready(() => {
         $('header').removeClass('condensed');
         $('.banner').removeClass('condensed');
       }
+      stickyNavigation(st)
     });
+
+    function stickyNavigation(st) {
+        const nav = '.sticky-navigation';
+        if(st >= $('header').height() + 100) {
+            gsap.to(nav, {
+                duration:0.3,
+                y:0,
+                ease:Expo.out
+            })
+        } else {
+            gsap.to(nav, {
+                duration:0.7,
+                y:-100,
+                ease:Expo.in
+            })
+        }
+    }
   });
   
   $(window).on('load', () => {
