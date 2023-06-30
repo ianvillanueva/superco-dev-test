@@ -433,11 +433,16 @@ header .cart-count.active {
   opacity: 1;
 }
 header.condensed {
-  margin-bottom: -12.6428571429em;
+  margin-bottom: -177px;
+}
+@media screen and (max-width: 1440px) {
+  header.condensed {
+    margin-bottom: -12vw;
+  }
 }
 @media screen and (max-width: 767px) {
   header.condensed {
-    margin-bottom: -13.5714285714pxem;
+    margin-bottom: -20vw;
   }
 }
 header.condensed .header-content {
@@ -457,6 +462,11 @@ header.condensed .header-content .img-wrap {
 }
 header.condensed .content {
   opacity: 0;
+}
+@media screen and (max-width: 767px) {
+  header.condensed .content {
+    height: 0;
+  }
 }
 
 .sidebar-cart {

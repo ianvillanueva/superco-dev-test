@@ -296,9 +296,12 @@ header {
     }
 
     &.condensed {
-        margin-bottom:em(-177);
+        margin-bottom:-177px;
+        @media screen and (max-width:1440px) {
+            margin-bottom:-12vw;
+        }
         @media screen and (max-width:767px) {
-            margin-bottom:em(-190px);
+            margin-bottom:-20vw;
         }
         .header-content {
             padding:0;
@@ -318,6 +321,9 @@ header {
         .content {
             // display:none;
             opacity:0;
+            @media screen and (max-width:767px) {
+                height:0;
+            }
         }
     }
 }
