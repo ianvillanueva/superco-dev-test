@@ -104,30 +104,26 @@ $(document).ready(function () {
     });
   });
   var isFetching = false;
+  $('.sidebar-cart').removeClass('active');
   $('.btn-cart').on('click', function (e) {
     e.preventDefault();
-    gsap.to('.sidebar-cart', {
-      duration: 0.3,
-      x: 0,
-      ease: Expo.easeOut,
-      onComplete: function onComplete() {
-        openCart();
-      }
-    });
+    openCart();
   });
   $('.btn-close').on('click', function (e) {
     e.preventDefault();
+    $('.sidebar-cart').removeClass('active');
     gsap.to('.sidebar-cart', {
       duration: 0.3,
       x: $('.sidebar-cart').width(),
       ease: Expo.easeIn,
       onComplete: function onComplete() {
-        $('.side-cart').removeClass('active');
+        '.sidebar-cart'.removeClass('active');
       }
     });
   });
   function openCart() {
     if ($('.sidebar-cart').hasClass('active')) return;
+    $('.sidebar-cart').addClass('active');
     gsap.to('.sidebar-cart', {
       duration: 0.3,
       x: 0,
@@ -136,10 +132,8 @@ $(document).ready(function () {
         getCartItems();
       }
     });
-    $('.sidebar-cart').addClass('active');
   }
   function addToCart(data) {
-    console.log(data);
     $.ajax({
       type: 'POST',
       url: '/cart/add.js',
@@ -153,6 +147,7 @@ $(document).ready(function () {
   }
   function getCartItems() {
     if (isFetching) return;
+    isFetching = true;
     $.ajax({
       type: 'GET',
       url: '/cart.js',
@@ -162,20 +157,24 @@ $(document).ready(function () {
         console.log('fetch cart', cart);
         isFetching = false;
         var items = cart.items;
+        $('.cart-items').html("\n                    <div class=\"spinner\">\n                        <span class=\"loader\"></span>\n                    </div>\n                ");
         var html = '';
-        if (cart.items.length) {
+        if (cart.items.length > 0) {
           cart.items.map(function (item) {
             html += "\n                            <div class=\"cart-item\">\n                                <div class=\"img-wrap\">\n                                    <img src=\"".concat(item.featured_image.url, "\">\n                                </div>\n                                <div class=\"content\">\n                                    <h4>").concat(item.title, "</h4>\n                                    <p>").concat(item.quantity, "</p>\n                                    <p>").concat(formatMoney(item.price, cart.currency), "</p>\n                                </div>\n                            </div>\n                        \n                        ");
           });
           $('.cart-items').html(html);
+          $('.cart-count').addClass('active').html(cart.item_count);
         } else {
           html = '<p>No cart items...</p>';
+          $('.cart-items').html(html);
+          $('.cart-count').removeClass('active').html('');
         }
         $('.total').html(formatMoney(cart.total_price, cart.currency));
       }
     });
-    isFetching = true;
   }
+  getCartItems();
   function formatMoney(price, currency) {
     var convertedPrice = (price / 100).toFixed(2);
     var currencyType = getCurrencySymbol(getLang(), currency);
@@ -195,7 +194,6 @@ $(document).ready(function () {
   }
   $(window).on('scroll', function () {
     var st = $(window).scrollTop();
-    console.log(st);
     if (st > 0) {
       $('header').addClass('condensed');
       $('.banner').addClass('condensed');

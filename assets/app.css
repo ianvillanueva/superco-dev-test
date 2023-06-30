@@ -266,6 +266,7 @@ header .navigation > a {
   height: 1.5em;
   transition: 0.3s ease;
   display: block;
+  position: relative;
 }
 @media screen and (max-width: 767px) {
   header .navigation > a {
@@ -311,6 +312,7 @@ header .navigation-mobile .btn-wrap {
   justify-content: flex-end;
 }
 header .navigation-mobile .btn-wrap a {
+  position: relative;
   width: auto;
   height: 1.4285714286em;
   display: block;
@@ -411,6 +413,24 @@ header .header-content .content p {
   header .header-content .content p {
     font-size: 1.1428571429em;
   }
+}
+header .cart-count {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  background-color: #ccc;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  font-size: 11px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+header .cart-count.active {
+  opacity: 1;
 }
 header.condensed {
   margin-bottom: -12.6428571429em;

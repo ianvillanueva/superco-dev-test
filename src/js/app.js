@@ -109,32 +109,29 @@ $(document).ready(() => {
 
     
       let isFetching = false;
+      $('.sidebar-cart').removeClass('active');
       $('.btn-cart').on('click', function(e) {
         e.preventDefault();
-        gsap.to('.sidebar-cart', {
-            duration:0.3,
-            x:0,
-            ease:Expo.easeOut,
-            onComplete:function() {
-                openCart();
-            }
-        })
+        openCart();
       })
 
       $('.btn-close').on('click', function(e) {
         e.preventDefault();
+      $('.sidebar-cart').removeClass('active');
+
         gsap.to('.sidebar-cart', {
             duration:0.3,
             x:$('.sidebar-cart').width(),
             ease:Expo.easeIn,
             onComplete:function() {
-                $('.side-cart').removeClass('active')
+                ('.sidebar-cart').removeClass('active');
             }
         })
       })
 
       function openCart() {
         if($('.sidebar-cart').hasClass('active')) return;
+        $('.sidebar-cart').addClass('active');
         gsap.to('.sidebar-cart', {
             duration:0.3,
             x:0,
@@ -143,12 +140,10 @@ $(document).ready(() => {
                 getCartItems();
             }
         })
-        $('.sidebar-cart').addClass('active');
 
       }
 
       function addToCart(data) {
-        console.log(data)
         $.ajax({
             type: 'POST',
             url: '/cart/add.js',
@@ -163,6 +158,7 @@ $(document).ready(() => {
 
       function getCartItems() {
         if(isFetching) return;
+        isFetching = true;
         $.ajax({
             type: 'GET',
             url: '/cart.js',
@@ -172,8 +168,15 @@ $(document).ready(() => {
                 console.log('fetch cart', cart);
                 isFetching = false
                 const items = cart.items
+                $('.cart-items').html(`
+                    <div class="spinner">
+                        <span class="loader"></span>
+                    </div>
+                `);
+
+                
                 let html = '';
-                if(cart.items.length) {
+                if(cart.items.length > 0) {
                     cart.items.map((item) => {
                         html += `
                             <div class="cart-item">
@@ -191,14 +194,19 @@ $(document).ready(() => {
                     })
 
                     $('.cart-items').html(html);
+                    
+                    $('.cart-count').addClass('active').html(cart.item_count);
                 } else {
                     html = '<p>No cart items...</p>'
+                    $('.cart-items').html(html);
+                    $('.cart-count').removeClass('active').html('');
                 }
                 $('.total').html(formatMoney(cart.total_price, cart.currency))
             }
         });
-        isFetching = true;
       }
+
+      getCartItems();
 
       function formatMoney(price, currency) {
         const convertedPrice = (price / 100).toFixed(2);
@@ -227,7 +235,6 @@ $(document).ready(() => {
 
     $(window).on('scroll', function() {
         const st = $(window).scrollTop();
-        console.log(st)
         if(st > 0) {
             $('header').addClass('condensed')
             $('.banner').addClass('condensed')
