@@ -21,9 +21,24 @@ $(document).ready(function () {
   }).resize();
   $('.burger').on('click', function (e) {
     e.preventDefault();
-    $('.burger').toggleClass('active');
-    $('.navigation').toggleClass('active');
+    if (!$('.burger').hasClass('active')) {
+      $('.burger').addClass('active');
+      gsap.to('.navigation', {
+        duration: 0.15,
+        x: 0,
+        ease: Expo.easeOut
+      });
+    } else {
+      $('.burger').removeClass('active');
+      gsap.to('.navigation', {
+        duration: 0.15,
+        x: '100%',
+        ease: Expo.easeIn
+      });
+    }
+    // $('.navigation').toggleClass('active');
   });
+
   $('.cards-carousel').slick({
     dots: false,
     infinite: false,

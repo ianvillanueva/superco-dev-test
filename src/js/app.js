@@ -13,8 +13,23 @@ $(document).ready(() => {
 
     $('.burger').on('click', (e) => {
         e.preventDefault();
-        $('.burger').toggleClass('active');
-        $('.navigation').toggleClass('active');
+
+        if(!$('.burger').hasClass('active')) {
+            $('.burger').addClass('active');
+            gsap.to('.navigation', {
+                duration:0.15,
+                x:0,
+                ease:Expo.easeOut
+            })
+        } else {
+            $('.burger').removeClass('active');
+            gsap.to('.navigation', {
+                duration:0.15,
+                x:'100%',
+                ease:Expo.easeIn
+            })
+        }
+        // $('.navigation').toggleClass('active');
     })
 
 

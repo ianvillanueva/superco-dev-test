@@ -191,7 +191,7 @@ header .navigation {
   header .navigation {
     pointer-events: none;
     opacity: 1;
-    transform: translateX(100vw);
+    transform: translateX(100%);
     position: absolute;
     z-index: 6;
     width: 100vw;
