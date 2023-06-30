@@ -15,21 +15,24 @@
       <a href="#" class="btn-arrow btn-arrow-right">{% render 'icon-arrow-right' %}</a>
     </div>
     <div class="products products-carousel">
-      {%- if section.blocks.size > 1 -%}
-        {%- for block in section.blocks -%}
-          <div class="product-item">
-            {% if block.settings.image != null %}
-              <div class="img-wrap">
-                <img src="{{ block.settings.image | img_url: 'master' }}">
-              </div>
-            {% endif %}
-            <div class="content">
-              <p>{{ block.settings.title }}</p>
-              <span>${{ block.settings.price }}</span>
+      {%- for product in collections['featured-product'].products -%}
+        {% assign current_variant = product.selected_or_first_available_variant %}
+        <a
+          href="#"
+          class="product-item btn-product"
+          data-variant-id="{{ current_variant.id }}"
+        >
+          {% if product.featured_image != null %}
+            <div class="img-wrap">
+              <img src="{{ product.featured_image | img_url: 'master' }}">
             </div>
+          {% endif %}
+          <div class="content">
+            <p>{{ product.title }}</p>
+            <span> {{ product.price | money }}</span>
           </div>
-        {% endfor %}
-      {% endif %}
+        </a>
+      {% endfor %}
     </div>
   </div>
   <a href="#" class="btn-shop-all">Shop All</a>
@@ -43,34 +46,6 @@
       "type": "text",
       "id": "heading",
       "label": "Heading"
-    }
-  ],
-  "blocks": [
-    {
-      "name": "Product",
-      "type": "product",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "text",
-          "id": "price",
-          "label": "Price"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "Link"
-        }
-      ]
     }
   ],
   "presets": [

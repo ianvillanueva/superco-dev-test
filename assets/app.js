@@ -75,6 +75,89 @@ $(document).ready(function () {
     e.preventDefault();
     productsCarousel.slick('slickNext');
   });
+  $('.btn-product').on('click', function (e) {
+    e.preventDefault();
+    var variantId = $(this).attr('data-variant-id');
+    addToCart({
+      id: variantId,
+      quantity: 1
+    });
+  });
+  var isFetching = false;
+  $('.btn-cart').on('click', function (e) {
+    e.preventDefault();
+    gsap.to('.sidebar-cart', {
+      duration: 0.3,
+      x: 0,
+      ease: Expo.easeOut,
+      onComplete: function onComplete() {
+        getCartItems();
+      }
+    });
+  });
+  $('.btn-close').on('click', function (e) {
+    e.preventDefault();
+    gsap.to('.sidebar-cart', {
+      duration: 0.3,
+      x: $('.sidebar-cart').width(),
+      ease: Expo.easeIn
+    });
+  });
+  function addToCart(data) {
+    console.log(data);
+    $.ajax({
+      type: 'POST',
+      url: '/cart/add.js',
+      data: data,
+      dataType: 'json',
+      success: function success(res) {
+        console.log("add to cart", res);
+        getCartItems();
+      }
+    });
+  }
+  function getCartItems() {
+    if (isFetching) return;
+    $.ajax({
+      type: 'GET',
+      url: '/cart.js',
+      cache: false,
+      dataType: 'json',
+      success: function success(cart) {
+        console.log('fetch cart', cart);
+        isFetching = false;
+        var items = cart.items;
+        var html = '';
+        if (cart.items.length) {
+          cart.items.map(function (item) {
+            html += "\n                            <div class=\"cart-item\">\n                                <div class=\"img-wrap\">\n                                    <img src=\"".concat(item.featured_image.url, "\">\n                                </div>\n                                <div class=\"content\">\n                                    <h4>").concat(item.title, "</h4>\n                                    <p>").concat(item.quantity, "</p>\n                                    <p>").concat(formatMoney(item.price, cart.currency), "</p>\n                                </div>\n                            </div>\n                        \n                        ");
+          });
+          $('.cart-items').html(html);
+        } else {
+          html = '<p>No cart items...</p>';
+        }
+        $('.total').html(formatMoney(cart.total_price, cart.currency));
+      }
+    });
+    isFetching = true;
+  }
+  function formatMoney(price, currency) {
+    var convertedPrice = (price / 100).toFixed(2);
+    var currencyType = getCurrencySymbol(getLang(), currency);
+    return currencyType + convertedPrice;
+  }
+  function getCurrencySymbol(locale, currency) {
+    return 0 .toLocaleString(locale, {
+      style: 'currency',
+      currency: currency,
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).replace(/\d/g, '').trim();
+  }
+  function getLang() {
+    if (navigator.languages != undefined) return navigator.languages[0];
+    return navigator.language;
+  }
 });
 $(window).on('load', function () {
   console.log("Load");
