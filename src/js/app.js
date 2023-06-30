@@ -17,6 +17,7 @@ $(document).ready(() => {
         if(!$('.burger').hasClass('active')) {
             $('.burger').addClass('active');
             $('body').addClass('disabled-scroll');
+            $('.navigation').addClass('active');
             gsap.to('.navigation', {
                 duration:0.7,
                 x:0,
@@ -25,11 +26,14 @@ $(document).ready(() => {
         } else {
             $('body').removeClass('disabled-scroll');
             $('.burger').removeClass('active');
+            $('.navigation').removeClass('active');
             gsap.to('.navigation', {
                 duration:0.3,
                 x:'100%',
                 ease:Expo.easeIn
             })
+            $('.navigation').removeClass('active');
+
         }
         // $('.navigation').toggleClass('active');
     })
@@ -220,8 +224,24 @@ $(document).ready(() => {
         return navigator.language;
       }
     
+
+    $(window).on('scroll', function() {
+        const st = $(window).scrollTop();
+        console.log(st)
+        if(st > 0) {
+            $('header').addClass('condensed')
+            $('.banner').addClass('condensed')
+        } else {
+            $('header').removeClass('condensed')
+            $('.banner').removeClass('condensed')
+        }
+    }) 
+      
 })
 
+
 $(window).on('load', () => {
-    console.log("Load");
+   
 })
+
+

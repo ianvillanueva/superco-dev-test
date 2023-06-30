@@ -16,9 +16,11 @@
   <div class="container">
     <div class="navigation-mobile">
       {% if header_setting.logo_image != null %}
-        <div class="logo-wrap">
-          <img src="{{ header_setting.logo_image | img_url: 'master' }}" alt="Logo">
-        </div>
+        {% comment %}
+          <div class="logo-wrap">
+            <img src="{{ header_setting.logo_image | img_url: 'master' }}" alt="Logo">
+          </div>
+        {% endcomment %}
       {% endif %}
       <div class="btn-wrap">
         <a href="#">{% render 'icon-search' %}</a>
@@ -48,7 +50,7 @@
     </div>
     <div class="header-content">
       {% if header_setting.logo_image != null %}
-        <div class="img-wrap">
+        <div class="img-wrap cls-logo">
           <img src="{{ header_setting.logo_image | img_url: 'master' }}" alt="Logo">
         </div>
       {% endif %}

@@ -68,3 +68,8 @@ a {
         padding:em(60) em(15) em(30);
     }
 }
+
+#MainContent {
+    position:relative;
+    z-index:3;
+}
