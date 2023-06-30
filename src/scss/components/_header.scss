@@ -71,7 +71,7 @@ header {
             top: 0;
             right: 0;
             justify-content: center;
-            transition:0.3s ease;
+            // transition:0.3s ease;
             &.active {
                 pointer-events: auto;
                 transform:translateX(0);

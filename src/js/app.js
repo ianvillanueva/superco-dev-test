@@ -17,14 +17,14 @@ $(document).ready(() => {
         if(!$('.burger').hasClass('active')) {
             $('.burger').addClass('active');
             gsap.to('.navigation', {
-                duration:0.15,
+                duration:0.7,
                 x:0,
                 ease:Expo.easeOut
             })
         } else {
             $('.burger').removeClass('active');
             gsap.to('.navigation', {
-                duration:0.15,
+                duration:0.3,
                 x:'100%',
                 ease:Expo.easeIn
             })

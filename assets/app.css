@@ -200,7 +200,6 @@ header .navigation {
     top: 0;
     right: 0;
     justify-content: center;
-    transition: 0.3s ease;
   }
   header .navigation.active {
     pointer-events: auto;
