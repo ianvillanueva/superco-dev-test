@@ -1029,7 +1029,7 @@ header.condensed .content {
     align-items: flex-start;
   }
 }
-.featured-products .products .product-item .content p {
+.featured-products .products .product-item .content a {
   font-family: "GT Super Display";
   font-size: 1.7142857143em;
   font-style: italic;
@@ -1038,9 +1038,27 @@ header.condensed .content {
   letter-spacing: 0em;
   text-align: left;
   color: #000;
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+.featured-products .products .product-item .content a:after {
+  content: "";
+  display: block;
+  width: 0%;
+  transition: 0.3s ease;
+  opacity: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background-color: #000;
+}
+.featured-products .products .product-item .content a:hover:after {
+  width: 100%;
+  opacity: 1;
 }
 @media screen and (max-width: 1024px) {
-  .featured-products .products .product-item .content p {
+  .featured-products .products .product-item .content a {
     font-size: 1.4285714286em;
     margin-bottom: 0.5em;
   }

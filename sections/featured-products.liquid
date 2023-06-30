@@ -17,9 +17,8 @@
     <div class="products products-carousel">
       {%- for product in collections['featured-product'].products -%}
         {% assign current_variant = product.selected_or_first_available_variant %}
-        <a
-          href="#"
-          class="product-item btn-product"
+        <div
+          class="product-item"
           data-variant-id="{{ current_variant.id }}"
         >
           {% if product.featured_image != null %}
@@ -28,10 +27,10 @@
             </div>
           {% endif %}
           <div class="content">
-            <p>{{ product.title }}</p>
+            <a href="#" class="btn-product">{{ product.title }}</a>
             <span> {{ product.price | money }}</span>
           </div>
-        </a>
+        </div>
       {% endfor %}
     </div>
   </div>
