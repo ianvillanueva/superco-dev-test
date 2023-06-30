@@ -8,24 +8,29 @@
 /***/ (() => {
 
 $(document).ready(function () {
+  var imgAssets = $('.img-asset');
+  var navigation = $('.navigation');
+  var sidebarCart = $('.sidebar-cart');
+  var cartItems = $('.cart-items');
+  var cartCount = $('.cart-count');
+  var total = $('.total');
+  var isFetching = false;
   $(window).resize(function () {
-    $('.img-asset').each(function (index, item) {
+    imgAssets.each(function (index, item) {
       var desktopImg = $(item).attr('desktop-img');
       var mobileImg = $(item).attr('mobile-img');
-      if ($(window).width() < 767) {
-        $(item).attr('src', mobileImg);
-      } else {
-        $(item).attr('src', desktopImg);
-      }
+      var src = $(window).width() < 767 ? mobileImg : desktopImg;
+      $(item).attr('src', src);
     });
   }).resize();
   $('.burger').on('click', function (e) {
     e.preventDefault();
-    if (!$('.burger').hasClass('active')) {
+    var isActive = $('.burger').hasClass('active');
+    if (!isActive) {
       $('.burger').addClass('active');
       $('body').addClass('disabled-scroll');
-      $('.navigation').addClass('active');
-      gsap.to('.navigation', {
+      navigation.addClass('active');
+      gsap.to(navigation, {
         duration: 0.7,
         x: 0,
         ease: Expo.easeOut
@@ -33,17 +38,13 @@ $(document).ready(function () {
     } else {
       $('body').removeClass('disabled-scroll');
       $('.burger').removeClass('active');
-      $('.navigation').removeClass('active');
-      gsap.to('.navigation', {
+      gsap.to(navigation, {
         duration: 0.3,
         x: '100%',
         ease: Expo.easeIn
       });
-      $('.navigation').removeClass('active');
     }
-    // $('.navigation').toggleClass('active');
   });
-
   $('.cards-carousel').slick({
     dots: false,
     infinite: false,
@@ -103,28 +104,26 @@ $(document).ready(function () {
       quantity: 1
     });
   });
-  var isFetching = false;
-  $('.sidebar-cart').removeClass('active');
   $('.btn-cart').on('click', function (e) {
     e.preventDefault();
     openCart();
   });
   $('.btn-close').on('click', function (e) {
     e.preventDefault();
-    $('.sidebar-cart').removeClass('active');
-    gsap.to('.sidebar-cart', {
+    sidebarCart.removeClass('active');
+    gsap.to(sidebarCart, {
       duration: 0.3,
-      x: $('.sidebar-cart').width(),
+      x: sidebarCart.width(),
       ease: Expo.easeIn,
       onComplete: function onComplete() {
-        '.sidebar-cart'.removeClass('active');
+        sidebarCart.removeClass('active');
       }
     });
   });
   function openCart() {
-    if ($('.sidebar-cart').hasClass('active')) return;
-    $('.sidebar-cart').addClass('active');
-    gsap.to('.sidebar-cart', {
+    if (sidebarCart.hasClass('active')) return;
+    sidebarCart.addClass('active');
+    gsap.to(sidebarCart, {
       duration: 0.3,
       x: 0,
       ease: Expo.easeOut,
@@ -157,20 +156,20 @@ $(document).ready(function () {
         console.log('fetch cart', cart);
         isFetching = false;
         var items = cart.items;
-        $('.cart-items').html("\n                    <div class=\"spinner\">\n                        <span class=\"loader\"></span>\n                    </div>\n                ");
+        cartItems.html("\n            <div class=\"spinner\">\n              <span class=\"loader\"></span>\n            </div>\n          ");
         var html = '';
         if (cart.items.length > 0) {
           cart.items.map(function (item) {
-            html += "\n                            <div class=\"cart-item\">\n                                <div class=\"img-wrap\">\n                                    <img src=\"".concat(item.featured_image.url, "\">\n                                </div>\n                                <div class=\"content\">\n                                    <h4>").concat(item.title, "</h4>\n                                    <p>").concat(item.quantity, "</p>\n                                    <p>").concat(formatMoney(item.price, cart.currency), "</p>\n                                </div>\n                            </div>\n                        \n                        ");
+            html += "\n                <div class=\"cart-item\">\n                  <div class=\"img-wrap\">\n                    <img src=\"".concat(item.featured_image.url, "\">\n                  </div>\n                  <div class=\"content\">\n                    <h4>").concat(item.title, "</h4>\n                    <p>").concat(item.quantity, "</p>\n                    <p>").concat(formatMoney(item.price, cart.currency), "</p>\n                  </div>\n                </div>\n              ");
           });
-          $('.cart-items').html(html);
-          $('.cart-count').addClass('active').html(cart.item_count);
+          cartItems.html(html);
+          cartCount.addClass('active').html(cart.item_count);
         } else {
           html = '<p>No cart items...</p>';
-          $('.cart-items').html(html);
-          $('.cart-count').removeClass('active').html('');
+          cartItems.html(html);
+          cartCount.removeClass('active').html('');
         }
-        $('.total').html(formatMoney(cart.total_price, cart.currency));
+        total.html(formatMoney(cart.total_price, cart.currency));
       }
     });
   }
@@ -203,7 +202,9 @@ $(document).ready(function () {
     }
   });
 });
-$(window).on('load', function () {});
+$(window).on('load', function () {
+  // Code to run after window has loaded
+});
 
 /***/ }),
 

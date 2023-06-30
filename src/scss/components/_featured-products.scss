@@ -5,8 +5,8 @@
     .products-wrap {
         position:relative;
         @media screen and (min-width:1025px) {
-            max-width: em(1380);
-            padding: 0 em(10);
+            max-width:em(1440);
+            padding:0 em(40);
             width: 100%;
             margin: 0 auto;
         }
@@ -38,7 +38,7 @@
         transform:translateY(-50%);
         z-index:9;
         pointer-events: none;
-        width:calc(100% - 20px);
+        width:calc(100% - 40px);
         right:0;
         margin:0 auto;
         display:flex;

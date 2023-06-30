@@ -56,10 +56,13 @@ a {
     cursor: pointer;
 }
 .container {
-    max-width:em(1380);
-    padding:0 em(10);
+    max-width:em(1440);
+    padding:0 em(40);
     width: 100%;
     margin:0 auto;
+    @media screen and (max-width:767px) {
+        padding:0 em(10);
+    }
 }
 
 .heading-wrap {
